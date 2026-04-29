@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,3 +20,20 @@
     </div>
 </body>
 </html>
+<?php
+if($_SERVER['REQUEST_METHOD']==='POST'){
+    require_once __DIR__ . '/../config/config.php';
+    require_once INCLUDES_PATH . 'fonctions-auth.php';
+// VERIFICATION DES ENTREES
+    $identifiant = htmlspecialchars(trim($_POST['identifiant']));
+    $mot_de_passe = htmlspecialchars(trim($_POST['mot_de_passe']));
+// AUTHENTIFICATION
+    if (authentification(UTILISATEURS_FILE, $identifiant, $mot_de_passe )){
+        definirSession($identifiant);
+        header("Location: " . BASE_URL);
+        exit();
+
+    }
+}
+
+?>

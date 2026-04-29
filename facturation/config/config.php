@@ -6,7 +6,7 @@ date_default_timezone_set('Africa/Kinshasa');
 
 // CHEMINS PRINCIPAUX
 define('BASE_PATH',__DIR__.'/../');
-define('BASE_URL','http://facturation.test');
+define('BASE_URL','http://TP_PHP.test/facturation');
 
 // CHEMINS DES DOSSIERS
 define('ASSETS_PATH', BASE_URL . 'assets/');
@@ -22,6 +22,7 @@ define('FACTURATION_PATH', MODULES_PATH .'facturation/');
 define('ADMIN_PATH', MODULES_PATH .'admin/');
 define('CONFIG_PATH', BASE_PATH .'config/');
 // CHEMINS DES FICHIERS
+define('LOGIN_PATH', AUTH_PATH .'login.php');
 define('PRODUITS_FILE', DATA_PATH .'produits.json');
 define('UTILISATEURS_FILE', DATA_PATH .'utilisateurs.json');
 define('FACTURES_FILE', DATA_PATH .'factures.json');
