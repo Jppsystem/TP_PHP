@@ -29,8 +29,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 alert("Produit trouvé: " + data.nom + " - Prix: " + data.prix_unitaire);
             } else {
                 // Afficher formulaire pour nouvel enregistrement
-                document.querySelector("#formProduit").style.display = "block";
-                document.querySelector("#code_barre").value = code;
+                documents.querySelector("#formProduit").style.display = "block";
+                documents.querySelector("#code_barre").value = code;
             }
         });
     });
