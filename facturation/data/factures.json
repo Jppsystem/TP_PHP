@@ -1,0 +1,31 @@
+[
+    {
+        "id_facture": "FAC-20260429-185815",
+        "date": "2026-04-29",
+        "heure": "18:58:15",
+        "caissier": "caissier1",
+        "articles": [
+            {
+                "nom": "Pepsi",
+                "prix_unitaire_ht": 1000,
+                "quantite": 3,
+                "sous_total_ht": 3000
+            },
+            {
+                "nom": "Savon",
+                "prix_unitaire_ht": 500,
+                "quantite": 2,
+                "sous_total_ht": 1000
+            },
+            {
+                "nom": "Nutella",
+                "prix_unitaire_ht": 8000,
+                "quantite": 3,
+                "sous_total_ht": 24000
+            }
+        ],
+        "total_ht": 28000,
+        "tva": 5040,
+        "total_ttc": 33040
+    }
+]
