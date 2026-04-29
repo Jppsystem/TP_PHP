@@ -14,5 +14,13 @@
     "date_expiration": "2026-05-05",
     "quantite_stock": 100,
     "date_enregistrement": "2026-04-29"
+  },
+  {
+    "code_barre": "5876543210987",
+    "nom": "Viande",
+    "prix_unitaire": 0.8,
+    "date_expiration": "2026-05-05",
+    "quantite_stock": 100,
+    "date_enregistrement": "2026-04-29"
   }
 ]
