@@ -1,0 +1,26 @@
+[
+  {
+    "code_barre": "1234567890123",
+    "nom": "Lait",
+    "prix_unitaire": 1.5,
+    "date_expiration": "2026-05-30",
+    "quantite_stock": 50,
+    "date_enregistrement": "2026-04-29"
+  },
+  {
+    "code_barre": "9876543210987",
+    "nom": "Pain",
+    "prix_unitaire": 0.8,
+    "date_expiration": "2026-05-05",
+    "quantite_stock": 100,
+    "date_enregistrement": "2026-04-29"
+  },
+  {
+    "code_barre": "4567891234567",
+    "nom": "Jus d'orange",
+    "prix_unitaire": 2.2,
+    "date_expiration": "2026-06-10",
+    "quantite_stock": 30,
+    "date_enregistrement": "2026-04-29"
+  }
+]
