@@ -14,6 +14,27 @@ function trouverUtilisateur($identifiant, $utilisateurs){
     }
     return false;
 }
+//SAUVEGARDER UTILISATEURS
+
+function sauvegarderUtilisateurs( $fichier,  $utilisateurs) {
+    // 1. Convertir le tableau PHP en JSON
+    $json = json_encode($utilisateurs, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+
+    // 2. Vérifier si la conversion a réussi
+    if ($json === false) {
+        throw new RuntimeException("Erreur lors de la conversion en JSON : " . json_last_error_msg());
+    }
+
+    // 3. Écrire le JSON dans le fichier
+    $resultat = file_put_contents($fichier, $json);
+
+    // 4. Vérifier si l’écriture a réussi
+    if ($resultat === false) {
+        throw new RuntimeException("Impossible d'écrire dans le fichier $fichier");
+    }
+}
+
+
 //VERIFICATION MOT DE PASSE NON HACHE
 function verifierMotDePasse($motDePasseSaisi, $motDePasseStocke){
     return ($motDePasseSaisi === $motDePasseStocke);

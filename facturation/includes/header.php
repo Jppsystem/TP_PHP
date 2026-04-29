@@ -15,7 +15,9 @@ require_once __DIR__ . '/../config/config.php';
         <a href="<?= BASE_URL ?>"><div>
             ACCUEIL
         </div></a>
-        <a href="<?= BASE_URL  . '/auth/logout.php' ?>">Déconnexion</a>
+        <a href="<?= BASE_URL  . '/auth/logout.php' ?>"><div>DECONNEXION</div></a>
+        <a href="<?= BASE_URL  . '/modules/admin/ajouter-compte.php' ?>"><div>ADMINISTRATION</div></a>
+        <a href="<?= BASE_URL . '/modules/admin/gestion-comptes.php' ?>"><div>GESTION DES COMPTE</div></a>
     </aside>
 </body>
 </html>
