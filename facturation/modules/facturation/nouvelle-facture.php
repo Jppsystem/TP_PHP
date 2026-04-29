@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once '../../includes/fonctions-factures.php';
+require_once INCLUDES_PATH . 'fonctions-produits.php';
 
 // Initialiser facture
 if (!isset($_SESSION['facture'])) {

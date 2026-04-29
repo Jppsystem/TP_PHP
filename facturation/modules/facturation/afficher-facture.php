@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once '../../includes/fonctions-factures.php';
-
+require_once '../../includes/fonctions-produits.php';
 if (empty($_SESSION['facture'])) {
     echo "Aucune facture.";
     exit;
