@@ -20,5 +20,5 @@ if ($found) {
     echo json_encode(["existe" => true] + $found);
 } else {
     echo json_encode(["existe" => false]);
-}//
+}
 ?>
