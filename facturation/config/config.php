@@ -27,4 +27,5 @@ define('PRODUITS_FILE', DATA_PATH .'produits.json');
 define('UTILISATEURS_FILE', DATA_PATH .'utilisateurs.json');
 define('FACTURES_FILE', DATA_PATH .'factures.json');
 
+
 ?>
