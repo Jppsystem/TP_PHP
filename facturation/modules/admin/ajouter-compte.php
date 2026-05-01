@@ -3,13 +3,26 @@
 session_start(); 
 require_once  __DIR__ . '/../../config/config.php';
 require_once INCLUDES_PATH . 'header.php';
+require_once INCLUDES_PATH .'fonctions-auth.php';
 
 // //VERIFICATION DE LA SESSION
 //     if (!isset($_SESSION['user'])){
 //         header("Location: LOGIN_PATH");
 //         exit();
 //     }
-
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $utilisateur=formulaireToUtilisateur($_POST);
+    $utilisateurs = chargerUtilisateur(UTILISATEURS_FILE);
+    if (utilisateurExiste($utilisateur['identifiant'], $utilisateurs)){
+        echo "<p style='color:red'>L'identifiant existe déjà. Veuillez en choisir un autre.</p>";
+    } else {
+        $utilisateurs[] = $utilisateur;
+        sauvegarderUtilisateurs(UTILISATEURS_FILE, $utilisateurs);
+        echo "<p style='color:green'>Utilisateur ajouté avec succès.</p>";
+        header ("Location: " . ADMIN_PATH . "gestion-comptes.php");
+        exit();        
+    }
+}
 
 
 ?>
@@ -27,7 +40,7 @@ require_once INCLUDES_PATH . 'header.php';
     <div class="ajout_utilisateur">
         <h2>Formulaire d'ajout d'utilisateur</h2>
 
-    <form action="traitement_utilisateur.php" method="POST">
+    <form action="ajouter-compte.php" method="POST">
         <label for="identifiant">Identifiant :</label>
         <input type="text" id="identifiant" name="identifiant" required><br>
 
@@ -39,7 +52,7 @@ require_once INCLUDES_PATH . 'header.php';
 
         <label for="role">Rôle :</label>
         <select id="role" name="role" required>
-            <option value="manager"></option>
+            <option value="manager">Manager</option>
             <option value="admin">Admin</option>
             <option value="caissier">Caissier</option>
 
