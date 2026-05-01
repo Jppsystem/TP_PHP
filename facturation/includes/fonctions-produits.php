@@ -157,7 +157,7 @@ echo "<p style='color:green;'>Produit enregistré avec succès !</p>";
 
   <footer>
     <p>&copy; 2026 - TP Facturation Supermarché</p>
-  </footer>
+  </footer> //
 </body>
 </html>
 
