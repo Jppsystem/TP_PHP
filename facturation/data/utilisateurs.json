@@ -1,11 +1,11 @@
 [
     {
         "identifiant": "zenas.Tshishimbi",
-        "mot_de_passe": "$zenastP",
-        "role": "admin",
+        "mot_de_passe": "$2y$10$jGCzuBBXVMDhShNSMyvzee9vhazAlJVfUGDTnB.hxEflrJUx7OwW6",
         "nom_complet": "Zenas Tshishimbi",
-        "date_creation": "2026-04-28",
-        "actif": true
+        "role": "admin",
+        "actif": false,
+        "date_creation": "2026-04-28"
     },
     {
         "identifiant": "PoleJP",
@@ -14,5 +14,13 @@
         "role": "manager",
         "actif": true,
         "date_creation": "2026-04-30"
+    },
+    {
+        "identifiant": "muk.JO",
+        "mot_de_passe": "$2y$10$6qhV.B\/o3RCKgg3KOuH3xeaeHXVIhX\/tuB.9T..GhbI7G\/0t.k1Ba",
+        "nom_complet": "Joseph Mukendi",
+        "role": "manager",
+        "actif": true,
+        "date_creation": "2026-05-05"
     }
 ]

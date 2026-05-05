@@ -12,14 +12,14 @@ require_once INCLUDES_PATH .'fonctions-auth.php';
 //     }
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $utilisateur=formulaireToUtilisateur($_POST);
-    $utilisateurs = chargerUtilisateur(UTILISATEURS_FILE);
+    $utilisateurs = chargerUtilisateur();
     if (utilisateurExiste($utilisateur['identifiant'], $utilisateurs)){
         echo "<p style='color:red'>L'identifiant existe déjà. Veuillez en choisir un autre.</p>";
     } else {
         $utilisateurs[] = $utilisateur;
         sauvegarderUtilisateurs(UTILISATEURS_FILE, $utilisateurs);
         echo "<p style='color:green'>Utilisateur ajouté avec succès.</p>";
-        header ("Location: " . ADMIN_PATH . "gestion-comptes.php");
+        header ("Location: " . BASE_URL . "/modules/admin/gestion-comptes.php");
         exit();        
     }
 }

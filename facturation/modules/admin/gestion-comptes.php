@@ -21,7 +21,7 @@ $utilisateurs = chargerUtilisateur($fichier);
         <td><?= $u['date_creation'] ?></td>
         <td>
             <a href="modifier-compte.php?id=<?= $u['identifiant'] ?>">Modifier</a> |
-            <a href="supprimer-compte.php?id=<?= $u['identifiant'] ?>" onclick="return confirm('Supprimer ce compte ?')">Supprimer</a>
+            <a href="supprimer-compte.php?id=<?= $u['identifiant'] ;?>" onclick="return confirm('Supprimer ce compte ?')">Supprimer</a>
         </td>
     </tr>
     <?php } ?>

@@ -29,7 +29,8 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
     $mot_de_passe = htmlspecialchars(trim($_POST['mot_de_passe']));
 // AUTHENTIFICATION
     if (authentification(UTILISATEURS_FILE, $identifiant, $mot_de_passe )){
-        definirSession($identifiant);
+        demarrerSession();
+ //       creerSession($utilisateur);
         header("Location: " . BASE_URL);
         exit();
 

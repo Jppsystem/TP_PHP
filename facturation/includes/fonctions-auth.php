@@ -61,33 +61,35 @@ function authentification($fichier, $identifiant, $motDePasseSaisi){
     $utilisateur = trouverUtilisateur($identifiant, $utilisateurs); 
     if ($utilisateur && verifierMotDePasseHash($motDePasseSaisi, $utilisateur['mot_de_passe']) ){
        // definirSession($identifiant);
-        return true;
+       creerSession($utilisateur);
+        return true ;
+
     }
     return false;
 }
 //
 
 //DEFINITION DE SESSION
-function definirSession($identifiant, $role){
-    $_SESSION['user'] = $identifiant;
-    $_SESSION['role'] = $role;  
-}
+// function definirSession($utilisateur){
+//     $_SESSION['user'] = $utilisateur['identifiant'];
+//     $_SESSION['role'] = $utilisateur['role'];
+// }
 // VÉRIFICATION SI L'UTILISATEUR EST CONNECTÉ
 function estConnecte(){
     return isset($_SESSION['user']);
 }
 // VÉRIFICATION SI L'UTILISATEUR EST ADMIN
-function estAdmin(){
-    return isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
-}
+// function estAdmin(){
+//     return isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
+// }
 // VÉRIFICATION SI L'UTILISATEUR EST MANAGER
-function estManager(){
-    return isset($_SESSION['role']) && $_SESSION['role'] === 'manager';
-}
+// function estManager(){
+//     return isset($_SESSION['role']) && $_SESSION['role'] === 'manager';
+// }
 // VÉRIFICATION SI L'UTILISATEUR EST CAISSIER
-function estCaissier(){
-    return isset($_SESSION['role']) && $_SESSION['role'] === 'caissier';
-}
+// function estCaissier(){
+//     return isset($_SESSION['role']) && $_SESSION['role'] === 'caissier';
+// }
 //DECONNEXION
 function deconnecter(){
     session_destroy();
@@ -116,7 +118,48 @@ function formulaireToUtilisateur($data){
     ];
 }
 
+// SESSIONS
+//DEMARRER LA SESSION
+function demarrerSession(){
+    if (session_status() === PHP_SESSION_NONE){
+        session_start();
+    }
+}
 
-
-//AJOUTER UN UTILISATEUR
-?>
+// Creer la session
+function creerSession($utilisateur){
+    demarrerSession();
+    $_SESSION['user_id'] = $utilisateur['identifiant'];
+    $_SESSION['nom_complet'] = $utilisateur['nom_complet'];
+    $_SESSION['role'] = $utilisateur['role'];
+}
+// estAdmin
+function estAdmin(){
+    if(!session_status()===PHP_SESSION_NONE){
+        if($_SESSION['role']==='admin' && isset($_SESSION['role'])){
+            return true;
+        }
+    
+}} 
+// estManager
+function estManager(){
+    if(!session_status()===PHP_SESSION_NONE){
+        if($_SESSION['role']==='manager' && isset($_SESSION['role'])){
+            return true;
+        }
+    
+}} 
+//Est Caissier
+function estCaissier(){
+    if(isset($_SESSION['role']) && $_SESSION['role']==='caissier'){
+        return true;
+    }
+}
+//REDIRECTION PAGE CONNEXION
+function redirectionLogin(){
+    if (!isset($_SESSION['user_id'])){
+        header("Location: " . BASE_URL . "auth/login.php");
+        exit();
+    }
+}
+ ?>
