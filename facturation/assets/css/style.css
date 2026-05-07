@@ -1,0 +1,71 @@
+/* Conteneur principal du menu */
+.nav-header {
+    background-color: #222;
+    font-family: Arial, sans-serif;
+}
+
+/* Liste principale */
+.menu-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+/* Éléments principaux */
+.menu-item {
+    position: relative;
+}
+
+.menu-link, .menu-title {
+    display: block;
+    padding: 12px 18px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+/* Effet hover sur les liens principaux */
+.menu-link:hover, .menu-title:hover {
+    background-color: #444;
+}
+
+/* Sous-menu */
+.submenu-list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    background-color: #333;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+/* Affichage du sous-menu au survol */
+.dropdown:hover .submenu-list {
+    display: block;
+}
+
+/* Éléments du sous-menu */
+.submenu-item {
+    border-bottom: 1px solid #444;
+}
+
+.submenu-link {
+    display: block;
+    padding: 10px 15px;
+    color: #ddd;
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Effet hover sur les sous-liens */
+.submenu-link:hover {
+    background-color: #555;
+    color: #fff;
+}

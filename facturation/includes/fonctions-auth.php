@@ -21,7 +21,7 @@ function tableauToJson($tableau){
     return json_encode($tableau, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
 }
 //ECRIRE DANS LE FICHIER JSON
-function ecrireJson($fichier, $data){
+function ecritureJson($fichier, $data){
     return file_put_contents($fichier, $data);
 }
 //SAUVEGARDER UTILISATEURS
@@ -36,7 +36,7 @@ function sauvegarderUtilisateurs( $fichier,  $utilisateurs) {
     }
 
     // 3. Écrire le JSON dans le fichier
-    $resultat = ecrireJson($fichier, $json);
+    $resultat = ecritureJson($fichier, $json);
 
     // 4. Vérifier si l’écriture a réussi
     if ($resultat === false) {
@@ -129,36 +129,30 @@ function demarrerSession(){
 // Creer la session
 function creerSession($utilisateur){
     demarrerSession();
-    $_SESSION['user_id'] = $utilisateur['identifiant'];
+    $_SESSION['user'] = $utilisateur['identifiant'];
     $_SESSION['nom_complet'] = $utilisateur['nom_complet'];
     $_SESSION['role'] = $utilisateur['role'];
 }
 // estAdmin
 function estAdmin(){
-    if(!session_status()===PHP_SESSION_NONE){
-        if($_SESSION['role']==='admin' && isset($_SESSION['role'])){
-            return true;
-        }
-    
-}} 
+    demarrerSession();
+    return isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
+} 
 // estManager
 function estManager(){
-    if(!session_status()===PHP_SESSION_NONE){
-        if($_SESSION['role']==='manager' && isset($_SESSION['role'])){
-            return true;
-        }
+    demarrerSession();
+    return isset($_SESSION['role']) && $_SESSION['role'] === 'manager';
     
-}} 
+} 
 //Est Caissier
 function estCaissier(){
-    if(isset($_SESSION['role']) && $_SESSION['role']==='caissier'){
-        return true;
-    }
+    demarrerSession();
+     return isset($_SESSION['role']) && $_SESSION['role'] === 'caissier';
 }
 //REDIRECTION PAGE CONNEXION
 function redirectionLogin(){
-    if (!isset($_SESSION['user_id'])){
-        header("Location: " . BASE_URL . "auth/login.php");
+    if (!isset($_SESSION['user'])){
+        header("Location: " . BASE_URL . "/auth/login.php");
         exit();
     }
 }

@@ -1,8 +1,9 @@
-<?php session_start(); ?>
+<?php  ?>
 <?php require_once __DIR__ . '/config/config.php';
 require_once INCLUDES_PATH . 'header.php';
+// demarrerSession() ;
+redirectionLogin();
 ?>
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -111,8 +112,7 @@ require_once INCLUDES_PATH . 'header.php';
     </form>
   </main>
 
-  <footer>
-    <p>&copy; 2026 - TP Facturation Supermarché</p>
-  </footer> //
+  <?php require_once INCLUDES_PATH . 'footer.php'; ?>
+
 </body>
 </html>

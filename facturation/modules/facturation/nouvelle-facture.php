@@ -1,7 +1,11 @@
 <?php
-session_start();
+require_once __DIR__ . '/../../config/config.php';
+require_once INCLUDES_PATH . 'fonctions-auth.php';
 require_once '../../includes/fonctions-factures.php';
-require_once INCLUDES_PATH . 'fonctions-produits.php';
+require_once '../../includes/fonctions-produits.php';
+
+demarrerSession();
+
 
 // Initialiser facture
 if (!isset($_SESSION['facture'])) {
@@ -92,5 +96,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <br>
 <a href="calcul.php">Calculer la facture</a>
 
+<?php require_once INCLUDES_PATH . 'footer.php'; ?>
 </body>
 </html>

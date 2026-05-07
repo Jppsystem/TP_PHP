@@ -70,5 +70,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <button type="submit">Ajouter l'utilisateur</button>
     </form>
     </div>
+    <?php require_once INCLUDES_PATH . 'footer.php'; ?>
 </body>
 </html>

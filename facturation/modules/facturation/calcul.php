@@ -1,6 +1,10 @@
 <?php
-session_start();
+require_once __DIR__ . '/../../config/config.php';
+require_once INCLUDES_PATH . 'fonctions-auth.php';
 require_once '../../includes/fonctions-factures.php';
+require_once '../../includes/fonctions-produits.php';
+
+demarrerSession();
 
 if (empty($_SESSION['facture'])) {
     echo "Aucune facture.";
@@ -46,6 +50,6 @@ $total_ttc = calculTTC($total_ht, $tva);
 <h3>Total TTC : <?= $total_ttc ?> CDF</h3>
 
 <a href="afficher-facture.php">Valider</a>
-
+<?php require_once INCLUDES_PATH . 'footer.php'; ?>
 </body>
 </html>

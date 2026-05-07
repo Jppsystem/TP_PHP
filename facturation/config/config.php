@@ -27,5 +27,20 @@ define('PRODUITS_FILE', DATA_PATH .'produits.json');
 define('UTILISATEURS_FILE', DATA_PATH .'utilisateurs.json');
 define('FACTURES_FILE', DATA_PATH .'factures.json');
 
+//URLS
+define('ASSETS_PATH_URL', BASE_URL . '/assets/');
+define('CSS_PATH_URL', ASSETS_PATH_URL . 'css/');
+define('JS_PATH_URL', ASSETS_PATH_URL . 'js/');
+define('IMG_PATH_URL', ASSETS_PATH_URL . 'img/');
+
+define('AUTH_PATH_URL', BASE_URL . '/auth/');
+define('DATA_PATH_URL', BASE_URL . '/data/');
+define('INCLUDES_PATH_URL', BASE_URL . '/includes/');
+define('MODULES_PATH_URL', BASE_URL . '/modules/');
+define('ADMIN_PATH_URL', MODULES_PATH_URL . 'admin/');
+define('FACTURATION_PATH_URL', MODULES_PATH_URL . 'facturation/');
+define('PRODUITS_PATH_URL', MODULES_PATH_URL . 'produits/');
+define('RAPPORTS_PATH_URL', BASE_URL . '/facturation/rapports/');
+
 
 ?>

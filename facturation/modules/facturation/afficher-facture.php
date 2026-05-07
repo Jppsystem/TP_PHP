@@ -1,5 +1,7 @@
 <?php
-session_start();
+require_once __DIR__ . '/../../config/config.php';
+require_once INCLUDES_PATH . 'fonctions-auth.php';
+demarrerSession();
 require_once '../../includes/fonctions-factures.php';
 require_once '../../includes/fonctions-produits.php';
 if (empty($_SESSION['facture'])) {
@@ -72,6 +74,7 @@ unset($_SESSION['facture']);
 <h3>Total TTC : <?= $total_ttc ?></h3>
 
 <a href="nouvelle-facture.php">Nouvelle facture</a>
+
 
 </body>
 </html>

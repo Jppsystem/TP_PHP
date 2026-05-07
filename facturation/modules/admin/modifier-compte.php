@@ -87,5 +87,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <button type="submit">Modifier l'utilisateur</button>
         </form>
     </div>
+    <?php require_once INCLUDES_PATH . 'footer.php'; ?>
 </body>
 </html>

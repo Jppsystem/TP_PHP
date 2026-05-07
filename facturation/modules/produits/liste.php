@@ -1,5 +1,8 @@
 <?php
 require_once("../../config/config.php");
+require_once INCLUDES_PATH . 'fonctions-auth.php';
+
+demarrerSession();
 
 $produits = json_decode(file_get_contents(PRODUITS_FILE), true) ?? [];
 ?>
@@ -37,5 +40,7 @@ $produits = json_decode(file_get_contents(PRODUITS_FILE), true) ?? [];
     </tr>
     <?php endforeach; ?>
   </table>
+
+  <?php require_once INCLUDES_PATH . 'footer.php'; ?>
 </body>
 </html>

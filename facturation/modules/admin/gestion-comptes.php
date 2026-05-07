@@ -4,9 +4,12 @@ require_once __DIR__ . '/../../config/config.php';
 require_once INCLUDES_PATH .'fonctions-auth.php';
 
 $fichier = DATA_PATH . "/utilisateurs.json";
-$utilisateurs = chargerUtilisateur($fichier);
+$utilisateurs = chargerUtilisateur();
+require_once INCLUDES_PATH . 'header.php';
 ?>
-<H2>GESTION DES COMPTE</H2><br>
+
+<body>
+    <H2>GESTION DES COMPTE</H2><br>
 <table border="1">
     <tr>
         <th>Identifiant</th><th>Nom</th><th>Rôle</th><th>Actif</th><th>Date Creation</th><th>Actions</th>
@@ -26,3 +29,6 @@ $utilisateurs = chargerUtilisateur($fichier);
     </tr>
     <?php } ?>
 </table>
+<br>
+<?php require_once INCLUDES_PATH . 'footer.php'; ?>
+</body>
